@@ -5,7 +5,7 @@ import Providers from "@/providers";
 import Header from "@/components/Header";
 
 const poppins = Poppins({
-  weight: ["500"],
+  weight: ["300","400","500"],
   style: ["normal"],
   subsets: ["devanagari"],
 });
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">ы
+    <html lang="en">
       <body className={poppins.className}>
         <svg
           className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import avatar from "@/public/avatar2.png";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import ScrollingBanner from "@/components/ScrollingBanner";
 import { itcbootcampLink } from "@/utils";
 export default function Home() {
