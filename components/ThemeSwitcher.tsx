@@ -28,8 +28,8 @@ export function ThemeSwitcher() {
 
   return (
     <Button
-    style={{ transform: isRotated ? "rotate(90deg)" : "rotate(0)" }}
-    onClick={handleButtonClick}
+      style={{ transform: isRotated ? "rotate(90deg)" : "rotate(0)" }}
+      onClick={handleButtonClick}
       isIconOnly
       radius="full"
       variant="light">

@@ -60,13 +60,13 @@ export default function Header(props: NavbarProps) {
           </NavbarItem>
         ))}
 
-        <NavbarItem>
-          <ThemeSwitcher />
-        </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <Button radius="full" variant="flat">
             Login
           </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <ThemeSwitcher />
         </NavbarItem>
       </NavbarContent>
 
@@ -96,7 +96,7 @@ export default function Header(props: NavbarProps) {
           </NavbarMenuItem>
         ))}
         <NavbarMenuItem>
-          <ThemeSwitcher/>
+          <ThemeSwitcher />
         </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>

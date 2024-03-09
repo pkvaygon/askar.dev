@@ -1,9 +1,6 @@
 import Image from "next/image";
 import avatar from "@/public/avatar2.png";
 import Link from "next/link";
-import { HTMLIcon } from "@/icons";
-import { stacks } from "@/utils";
-import { renderToString } from "react-dom/server";
 import ScrollingBanner from "@/components/ScrollingBanner";
 export default function Home() {
   return (
@@ -25,12 +22,12 @@ export default function Home() {
             </h2>
             <div className="flex justify-start items-center gap-5 mt-5">
               <Link
-                className=" hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
+                className="animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
                 href={"#"}>
                 See Portfolio
               </Link>
               <Link
-                className=" hover:bg-gray-500/50 hover:scale-110 transition-transform   border p-4"
+                className=" animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform   border p-4"
                 href={"#"}>
                 Contact Me
               </Link>
@@ -40,20 +37,24 @@ export default function Home() {
         <div className="w-1/2 h-full flex justify-center max-sm:items-center items-start">
           <div className="shadow-2xl max-sm:w-[200px] max-sm:h-[200px] w-[400px] h-full overflow-hidden rounded-[50%] relative">
             <Image
-              objectFit="cover"
-              objectPosition="center"
               fill
               priority
               src={avatar}
               alt="Askar Zhaanbaev"
+              className="object-contain object-center"
+              sizes="(max-width: 400px) 100vw, 400px"
             />
           </div>
         </div>
       </div>
       <div className="w-full mt-[100px]">
         <div className="flex flex-col gap-10 justify-start items-start">
-          <ScrollingBanner/>
+          <ScrollingBanner />
         </div>
+      </div>
+
+      <div>
+        
       </div>
     </section>
   );

@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en">ы
       <body className={poppins.className}>
         <svg
           className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light"

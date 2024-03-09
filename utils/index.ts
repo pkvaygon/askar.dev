@@ -2,7 +2,7 @@ export const navLinks = [
   { id: 0, label: "Home", href: "/" },
   { id: 1, label: "Projects", href: "#" },
   { id: 2, label: "About Website", href: "#" },
-  { id: 3, label: "Contacts", href: "#" },
+  { id: 3, label: "Contact", href: "#" },
 ];
 
 import html from "@/public/html.svg";
@@ -14,6 +14,9 @@ import next from "@/public/nextjs-icon.svg";
 import mongodb from "@/public/mongodb-icon.svg";
 import prisma from "@/public/prisma-icon.svg";
 import nodejs from "@/public/nodejs-icon.svg";
+import ui from "@/public/ui-icon.svg";
+import firebase from "@/public/firebase-icon.svg";
+import figma from "@/public/figma.svg";
 export const stacks = [
   {
     id: 0,
@@ -62,22 +65,17 @@ export const stacks = [
   },
   {
     id: 9,
-    label: "HTML",
-    image: html,
+    label: "UI Libraries",
+    image: ui,
   },
   {
     id: 10,
-    label: "CSS",
-    image: css,
+    label: "Firebase",
+    image: firebase,
   },
   {
     id: 11,
-    label: "JS",
-    image: js,
-  },
-  {
-    id: 12,
-    label: "TS",
-    image: ts,
+    label: "Figma",
+    image: figma,
   },
 ];
