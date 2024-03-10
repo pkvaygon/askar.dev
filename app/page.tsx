@@ -11,12 +11,17 @@ import {
   projects,
 } from "@/utils";
 import { AnchorIcon } from "@/icons";
+import { onContactMeFormSubmit } from "@/lib/actions";
+import { cookies } from "next/headers";
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
   subsets: ["latin"],
 });
+
 export default function Home() {
+  const cookieStore = cookies();
+  const sent = cookieStore.get("sent");
   return (
     <section className="relative container flex flex-col gap-[100px]">
       {/* Hero Section */}
@@ -65,14 +70,14 @@ export default function Home() {
                 className=" flex animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
                 href={"#"}>
                 View Portfolio
-                <AnchorIcon/>
+                <AnchorIcon />
               </Link>
               <Link
                 className=" flex animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform   border p-4"
                 target="_blank"
                 href={"https://github.com/pkvaygon"}>
                 View GitHub
-                <AnchorIcon/>
+                <AnchorIcon />
               </Link>
             </div>
           </div>
@@ -167,11 +172,20 @@ export default function Home() {
       </div>
       {/* Education */}
       <div className="flex max-sm:flex-col justify-between border-b items-start gap-2">
-        <h3 className="text-3xl">Education<span className="text-red-500">*</span></h3>
+        <h3 className="text-3xl">
+          Education<span className="text-red-500">*</span>
+        </h3>
         <div className="flex flex-col gap-2">
-          <Link className=" underline flex" target="_blank" href="https://www.google.com/maps/place/Hainan+College+of+Economics+and+Business/@19.981363,110.51936,15z/data=!4m6!3m5!1s0x3153d09e6f680263:0x564efa34f09cef09!8m2!3d19.981363!4d110.51936!16s%2Fg%2F11cm1hf8_b?entry=ttu">Hainan College of Economics and Business <AnchorIcon /></Link>
+          <Link
+            className=" underline flex"
+            target="_blank"
+            href="https://www.google.com/maps/place/Hainan+College+of+Economics+and+Business/@19.981363,110.51936,15z/data=!4m6!3m5!1s0x3153d09e6f680263:0x564efa34f09cef09!8m2!3d19.981363!4d110.51936!16s%2Fg%2F11cm1hf8_b?entry=ttu">
+            Hainan College of Economics and Business <AnchorIcon />
+          </Link>
           <p>Bachelor&apos;s degree</p>
-          <p><em>Haikou, China</em></p>
+          <p>
+            <em>Haikou, China</em>
+          </p>
         </div>
       </div>
       {/* Portfolio */}
@@ -208,7 +222,9 @@ export default function Home() {
           ))}
         </div>
         <div className="flex justify-center items-center">
-          <Link className="border-3 border-teal-500 dark:border-2 animate-pulse py-2 px-10 text-center" href="">
+          <Link
+            className="border-3 border-teal-500 dark:border-2 animate-pulse py-2 px-10 text-center"
+            href="">
             View More
           </Link>
         </div>
@@ -218,18 +234,79 @@ export default function Home() {
         <h3 className="text-3xl">Employment History(as developer)</h3>
         <div className="flex flex-col gap-2">
           {emplHistory.map((empl) => (
-            <div className="flex dark:border-1 border-4 p-4 flex-col justify-start items-start gap-4" key={empl.id}>
+            <div
+              className="flex dark:border-1 border-4 p-4 flex-col justify-start items-start gap-4"
+              key={empl.id}>
               <div>
-              <h4><strong>{empl.label}</strong></h4>
-              <h5>{empl.date}</h5>
+                <h4>
+                  <strong>{empl.label}</strong>
+                </h4>
+                <h5>{empl.date}</h5>
               </div>
               <div className="flex flex-col gap-3">
-                <span><em>{empl.location}</em></span>
+                <span>
+                  <em>{empl.location}</em>
+                </span>
                 <p className="text-sm">{empl.description}</p>
               </div>
             </div>
           ))}
         </div>
+      </div>
+      {/* Download CV */}
+      <Link
+        className=" font-medium flex border-1 justify-center items-center py-4 bg-teal-500/40"
+        target="_blank"
+        href={
+          "https://res.cloudinary.com/dxvf93ovn/image/upload/v1710045880/cv/Askar_Zhaanbaev_-_Frontend_Developer_zqovfg.pdf"
+        }>
+        DownLoad CV <AnchorIcon />
+      </Link>
+      {/* contact form */}
+      <div className=" max-sm:w-full flex flex-col gap-4 w-1/2 p-4 bg-slate-500/10 dark:bg-gray-500/10">
+        <h3 className="text-2xl">Contact me</h3>
+        {
+          sent ? (
+            <div className="w-full h-[400px] flex justify-center items-center">
+              <h5 className="text-green-500 p-3">Your Message has been sent!</h5>
+          </div>
+          )
+            :
+        <form
+          action={onContactMeFormSubmit}
+          className="flex flex-col gap-3 w-full">
+          <input
+            name="from_name"
+            className="px-2 py-3 text-sm"
+            type="text"
+            placeholder="your name"
+          />
+          <input
+            name="email"
+            className="px-2 py-3 text-sm"
+            type="email"
+            placeholder="your email address"
+          />
+          <input
+            name="phone"
+            className="px-2 py-3 text-sm"
+            type="tel"
+            placeholder="phone number"
+          />
+          <textarea
+            name="message"
+            className="resize-none min-h-[100px] max-h-max w-full h-auto p-2 min-w-full text-sm"
+            placeholder="your message"></textarea>
+          <button
+            disabled={sent ? true : false}
+            className={` py-3 dark:text-white/80 font-medium  ${
+              sent ? "bg-neutral-500 text-lime-500" : "bg-teal-500 text-white"
+            }`}
+            type="submit">
+            {sent ? "Completed!" : "Send Message"}
+          </button>
+        </form>
+        }
       </div>
     </section>
   );
