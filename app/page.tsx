@@ -3,7 +3,13 @@ import avatar from "@/public/avatar2.png";
 import Link from "next/link";
 import ScrollingBanner from "@/components/ScrollingBanner";
 import { Montserrat } from "next/font/google";
-import { backendSkills, frontendSkills, otherSkills, projects } from "@/utils";
+import {
+  backendSkills,
+  emplHistory,
+  frontendSkills,
+  otherSkills,
+  projects,
+} from "@/utils";
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
@@ -30,11 +36,11 @@ export default function Home() {
             </h2>
             <div className=" flex flex-col gap-3 max-sm:text-xs leading-loose text-sm font-normal">
               <p className="leading-relaxed">
-                I love create applications that are user-friendly, intuitive and
-                delightly
+                I love creating applications that are user-friendly, intuitive
+                and delightful
               </p>
               <p className="leading-relaxed">
-                I was student at{" "}
+                I was a student at{" "}
                 <Link
                   target="_blank"
                   className=" tracking-wide font-semibold  underline underline-offset-1"
@@ -42,8 +48,8 @@ export default function Home() {
                   ITCBootcamp
                 </Link>{" "}
                 company where I spent 3 months learning the fundamentals of
-                front-end development. After graduating courses I also worked at
-                ITCBootcamp where my role was participation in project
+                front-end development. After completing the courses, I also
+                worked at ITCBootcamp where my role was participation in project
                 development as a junior developer.
               </p>
               <p className="leading-relaxed">
@@ -162,7 +168,7 @@ export default function Home() {
           Projects<span className="text-red-500">*</span>
         </h3>
         <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3">
-          {projects.map((project) => (
+          {projects.slice(0, 2).map((project) => (
             <div
               className="w-full flex flex-col shadow-slate-500 shadow-2xl overflow-hidden"
               key={project.id}>
@@ -176,14 +182,41 @@ export default function Home() {
                 />
               </div>
               <div className="h-auto flex flex-col gap-2 p-2">
-                <h4><Link target="_blank" className="underline underline-offset-4" href={project.href}>{project.label}</Link></h4>
+                <h4>
+                  <Link
+                    target="_blank"
+                    className="underline underline-offset-4"
+                    href={project.href}>
+                    {project.label}
+                  </Link>
+                </h4>
                 <p className="text-foreground-400">{project.description}</p>
               </div>
             </div>
           ))}
         </div>
         <div className="flex justify-center items-center">
-          <Link className="border-2 py-2 px-10 text-center" href="">View More</Link>
+          <Link className="border-3 border-teal-500 dark:border-2 animate-pulse py-2 px-10 text-center" href="">
+            View More
+          </Link>
+        </div>
+      </div>
+      {/* Employment History */}
+      <div className="flex flex-col gap-5">
+        <h3 className="text-3xl">Employment History(as developer)</h3>
+        <div className="flex flex-col gap-2">
+          {emplHistory.map((empl) => (
+            <div className="flex dark:border-1 border-4 p-4 flex-col justify-start items-start gap-4" key={empl.id}>
+              <div>
+              <h4><strong>{empl.label}</strong></h4>
+              <h5>{empl.date}</h5>
+              </div>
+              <div className="flex flex-col gap-3">
+                <span><em>{empl.location}</em></span>
+                <p className="text-sm">{empl.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -122,3 +122,20 @@ export const projects = [
     href: "https://dearmelingerie.com/",
   },
 ];
+export const emplHistory = [
+  {
+    id: 0,
+    label: "Frontend-Developer",
+    date: "2021-2023",
+    location: "Bishkek, Kyrgyzstan",
+    description: `I joined ITCBootcamp as a programming enthusiast, eager to learn and grow. After
+    completing the program, I was not just invited to stay, but to thrive as a Junior Developer`,
+  },
+  {
+    id: 1,
+    label: "Feelance Web Developer",
+    date: "2023-2024",
+    location: "Chicago, IL",
+    description: `At the end of 2023 I moved to live in the USA. I am a legal migrant and have a work permit and am also a green card holder. Since moving, I have been looking for work and working as a freelancer`,
+  },
+];
