@@ -1,6 +1,6 @@
 export const navLinks = [
   { id: 0, label: "Home", href: "/" },
-  { id: 1, label: "Portfolio", href: "#" },
+  { id: 1, label: "Portfolio", href: "/portfolio" },
   { id: 2, label: "About Website", href: "#" },
   { id: 3, label: "Contact", href: "#" },
 ];
@@ -106,13 +106,16 @@ export const otherSkills = [
 ];
 import postech from "@/public/postechscreen.png";
 import dearme from "@/public/dearmescreen.png";
-export const projects = [
+import alexlimo from "@/public/alexlimoscreen.png";
+import nextstore from "@/public/nextstorescreen.png";
+export const portfolio = [
   {
     id: 0,
     label: "Postech.kg",
     description: "Online store for electronic devices and equipment.",
     image: postech,
     href: "https://postech.kg/",
+    status: "live",
   },
   {
     id: 1,
@@ -120,6 +123,23 @@ export const projects = [
     description: "Online store for women's lingerie.",
     image: dearme,
     href: "https://dearmelingerie.com/",
+    status: "live",
+  },
+  {
+    id: 2,
+    label: "Elite Luxury Limousine",
+    description: "Transportation services",
+    image: alexlimo,
+    href: "https://alexlimo.vercel.app/",
+    status: "live",
+  },
+  {
+    id: 3,
+    label: "Ecommerce NextJs Store",
+    description: "My testing e commerce online store",
+    image: nextstore,
+    href: "https://askar-store.vercel.app/shop",
+    status: "under development",
   },
 ];
 export const emplHistory = [

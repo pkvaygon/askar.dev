@@ -8,7 +8,7 @@ import {
   emplHistory,
   frontendSkills,
   otherSkills,
-  projects,
+  portfolio,
 } from "@/utils";
 import { AnchorIcon } from "@/icons";
 import { onContactMeFormSubmit } from "@/lib/actions";
@@ -195,7 +195,7 @@ export default function Home() {
           Portfolio<span className="text-red-500">*</span>
         </h3>
         <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3">
-          {projects.slice(0, 2).map((project) => (
+          {portfolio.slice(0, 2).map((project) => (
             <div
               className="w-full flex flex-col shadow-slate-500 shadow-2xl overflow-hidden"
               key={project.id}>
@@ -225,7 +225,7 @@ export default function Home() {
         <div className="flex justify-center items-center">
           <Link
             className="border-3 border-teal-500 dark:border-2 animate-pulse py-2 px-10 text-center"
-            href="">
+            href="/portfolio">
             View More
           </Link>
         </div>
