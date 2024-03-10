@@ -39,7 +39,7 @@ export default function Header(props: NavbarProps) {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-            className="rounded-full bg-foreground text-background">
+            className=" rounded-full bg-foreground text-background">
             <LogoIcon size={34} width={undefined} height={undefined} />
           </motion.div>
           <span className="ml-2 font-medium md:hidden">ASKAR</span>

@@ -13,6 +13,7 @@ import {
 import { AnchorIcon } from "@/icons";
 import { onContactMeFormSubmit } from "@/lib/actions";
 import { cookies } from "next/headers";
+import contactme from '@/public/creationofadam.png'
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
@@ -263,50 +264,57 @@ export default function Home() {
         DownLoad CV <AnchorIcon />
       </Link>
       {/* contact form */}
-      <div className=" max-sm:w-full flex flex-col gap-4 w-1/2 p-4 bg-slate-500/10 dark:bg-gray-500/10">
-        <h3 className="text-2xl">Contact me</h3>
-        {
-          sent ? (
+      <div className=" max-sm:w-full flex max-sm:flex-col gap-4 w-full p-4 bg-slate-500/10 dark:bg-gray-500/10">
+        <div className=" max-sm:w-full w-1/2">
+          <h3 className="text-2xl">Contact me</h3>
+          {sent ? (
             <div className="w-full h-[400px] flex justify-center items-center">
-              <h5 className="text-green-500 p-3">Your Message has been sent!</h5>
-          </div>
-          )
-            :
-        <form
-          action={onContactMeFormSubmit}
-          className="flex flex-col gap-3 w-full">
-          <input
-            name="from_name"
-            className="px-2 py-3 text-sm"
-            type="text"
-            placeholder="your name"
-          />
-          <input
-            name="email"
-            className="px-2 py-3 text-sm"
-            type="email"
-            placeholder="your email address"
-          />
-          <input
-            name="phone"
-            className="px-2 py-3 text-sm"
-            type="tel"
-            placeholder="phone number"
-          />
-          <textarea
-            name="message"
-            className="resize-none min-h-[100px] max-h-max w-full h-auto p-2 min-w-full text-sm"
-            placeholder="your message"></textarea>
-          <button
-            disabled={sent ? true : false}
-            className={` py-3 dark:text-white/80 font-medium  ${
-              sent ? "bg-neutral-500 text-lime-500" : "bg-teal-500 text-white"
-            }`}
-            type="submit">
-            {sent ? "Completed!" : "Send Message"}
-          </button>
-        </form>
-        }
+              <h5 className="text-green-500 p-3">
+                Your Message has been sent!
+              </h5>
+            </div>
+          ) : (
+            <form
+              action={onContactMeFormSubmit}
+              className="flex flex-col gap-3 w-full">
+              <input
+                name="from_name"
+                className="px-2 py-3 text-sm"
+                type="text"
+                placeholder="your name"
+              />
+              <input
+                name="email"
+                className="px-2 py-3 text-sm"
+                type="email"
+                placeholder="your email address"
+              />
+              <input
+                name="phone"
+                className="px-2 py-3 text-sm"
+                type="tel"
+                placeholder="phone number"
+              />
+              <textarea
+                name="message"
+                className="resize-none min-h-[100px] max-h-max w-full h-auto p-2 min-w-full text-sm"
+                placeholder="your message"></textarea>
+              <button
+                disabled={sent ? true : false}
+                className={` py-3 dark:text-white/80 font-medium  ${
+                  sent
+                    ? "bg-neutral-500 text-lime-500"
+                    : "bg-teal-500 text-white"
+                }`}
+                type="submit">
+                {sent ? "Completed!" : "Send Message"}
+              </button>
+            </form>
+          )}
+        </div>
+        <div className=" max-sm:w-full w-1/2 h-[400px] relative">
+          <Image className="object-contain" fill src={contactme} alt="contact me"/>
+        </div>
       </div>
     </section>
   );
