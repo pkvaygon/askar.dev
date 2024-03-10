@@ -3,7 +3,7 @@ import avatar from "@/public/avatar2.png";
 import Link from "next/link";
 import ScrollingBanner from "@/components/ScrollingBanner";
 import { Montserrat } from "next/font/google";
-import { backendSkills, frontendSkills, otherSkills } from "@/utils";
+import { backendSkills, frontendSkills, otherSkills, projects } from "@/utils";
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
@@ -12,6 +12,7 @@ const montserrat = Montserrat({
 export default function Home() {
   return (
     <section className="relative container flex flex-col gap-[100px]">
+      {/* Hero Section */}
       <div className="flex max-sm:flex-col justify-between items-start h-auto">
         <div className="w-1/2 max-sm:w-full h-full flex flex-col justify-start items-start max-sm:gap-4 gap-3">
           <h6 className=" max-sm:text-sm max-sm:text-start text-center w-full">
@@ -78,7 +79,7 @@ export default function Home() {
               sizes="(max-width: 400px) 100vw, 400px"
             />
           </div>
-      </div>
+        </div>
       </div>
       {/* ScrollingBar */}
       <div className="w-full ">
@@ -93,17 +94,16 @@ export default function Home() {
             My evolving skillset<span className="text-red-500">*</span>
           </h3>
         </div>
-        <div className="w-full flex flex-col gap-10 bg-gradient-to-r from-transparent via-transparent to-teal-100/5">
+        <div className="w-full flex  flex-col gap-10 bg-gradient-to-r from-transparent via-transparent to-teal-400 dark:to-teal-100/5">
           <div className="w-full max-sm:gap-2 max-sm:flex-col flex justify-between items-start">
-            <h4 className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
+            <h4
+              className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
               01 - frontend
             </h4>
             <div className="w-1/2 max-sm:w-full">
               <ul className="grid grid-cols-2 gap-2 grid-flow-row">
                 {frontendSkills.map((skill) => (
-                  <li
-                    className="text-pretty list-disc list-inside"
-                    key={skill}>
+                  <li className="text-pretty list-disc list-inside" key={skill}>
                     {skill}
                   </li>
                 ))}
@@ -111,15 +111,14 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-sm:gap-2 max-sm:flex-col  flex justify-between items-start">
-            <h4 className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
+            <h4
+              className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
               02 - backend
             </h4>
             <div className="w-1/2 max-sm:w-full">
               <ul className="grid grid-cols-2 gap-2 grid-flow-row">
                 {backendSkills.map((skill) => (
-                  <li
-                    className="text-pretty list-disc list-inside"
-                    key={skill}>
+                  <li className="text-pretty list-disc list-inside" key={skill}>
                     {skill}
                   </li>
                 ))}
@@ -127,7 +126,8 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full max-sm:gap-2 max-sm:flex-col  flex justify-between items-start">
-            <h4 className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
+            <h4
+              className={`text-6xl ${montserrat.className} max-sm:w-full max-sm:text-3xl w-1/2`}>
               03 - other
             </h4>
             <div className="w-1/2 max-sm:w-full">
@@ -155,6 +155,36 @@ export default function Home() {
           <li>Kyrgyz</li>
           <li>Turkish</li>
         </ul>
+      </div>
+      {/* Projects */}
+      <div className="flex flex-col gap-5">
+        <h3 className="text-3xl">
+          Projects<span className="text-red-500">*</span>
+        </h3>
+        <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3">
+          {projects.map((project) => (
+            <div
+              className="w-full flex flex-col shadow-slate-500 shadow-2xl overflow-hidden"
+              key={project.id}>
+              <div className="w-full h-[300px] relative">
+                <Image
+                  className="object-cover object-top"
+                  src={project.image}
+                  fill
+                  loading="lazy"
+                  alt={project.label}
+                />
+              </div>
+              <div className="h-auto flex flex-col gap-2 p-2">
+                <h4><Link target="_blank" className="underline underline-offset-4" href={project.href}>{project.label}</Link></h4>
+                <p className="text-foreground-400">{project.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center">
+          <Link className="border-2 py-2 px-10 text-center" href="">View More</Link>
+        </div>
       </div>
     </section>
   );

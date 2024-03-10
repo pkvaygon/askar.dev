@@ -104,3 +104,21 @@ export const otherSkills = [
   "CRM",
   "SSR,SSG,CSR,ISR,SPA",
 ];
+import postech from "@/public/postechscreen.png";
+import dearme from "@/public/dearmescreen.png";
+export const projects = [
+  {
+    id: 0,
+    label: "Postech.kg",
+    description: "Online store for electronic devices and equipment.",
+    image: postech,
+    href: "https://postech.kg/",
+  },
+  {
+    id: 1,
+    label: "Dear Me",
+    description: "Online store for women's lingerie.",
+    image: dearme,
+    href: "https://dearmelingerie.com/",
+  },
+];

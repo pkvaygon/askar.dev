@@ -34,6 +34,7 @@ const config: Config = {
     nextui({
       themes: {
         light: {
+          extend: "light",
           layout: {}, // light theme layout tokens
           colors: {
             background: "#E8FAF0",
@@ -41,6 +42,7 @@ const config: Config = {
           },
         },
         dark: {
+          extend: "dark",
           layout: {
             hoverOpacity: 0.9,
           },
