@@ -10,6 +10,7 @@ import {
   otherSkills,
   projects,
 } from "@/utils";
+import { AnchorIcon } from "@/icons";
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
@@ -61,15 +62,17 @@ export default function Home() {
             </div>
             <div className="flex justify-start max-sm:justify-center items-center gap-5 mt-5">
               <Link
-                className="animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
+                className=" flex animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
                 href={"#"}>
                 View Portfolio
+                <AnchorIcon/>
               </Link>
               <Link
-                className=" animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform   border p-4"
+                className=" flex animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform   border p-4"
                 target="_blank"
                 href={"https://github.com/pkvaygon"}>
                 View GitHub
+                <AnchorIcon/>
               </Link>
             </div>
           </div>
@@ -161,6 +164,15 @@ export default function Home() {
           <li>Kyrgyz</li>
           <li>Turkish</li>
         </ul>
+      </div>
+      {/* Education */}
+      <div className="flex max-sm:flex-col justify-between border-b items-start gap-2">
+        <h3 className="text-3xl">Education<span className="text-red-500">*</span></h3>
+        <div className="flex flex-col gap-2">
+          <Link className=" underline flex" target="_blank" href="https://www.google.com/maps/place/Hainan+College+of+Economics+and+Business/@19.981363,110.51936,15z/data=!4m6!3m5!1s0x3153d09e6f680263:0x564efa34f09cef09!8m2!3d19.981363!4d110.51936!16s%2Fg%2F11cm1hf8_b?entry=ttu">Hainan College of Economics and Business <AnchorIcon /></Link>
+          <p>Bachelor&apos;s degree</p>
+          <p><em>Haikou, China</em></p>
+        </div>
       </div>
       {/* Portfolio */}
       <div className="flex flex-col gap-5">
