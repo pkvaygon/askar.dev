@@ -59,7 +59,7 @@ export default function Home() {
                 towards flexibility, clarity and collaboration.
               </p>
             </div>
-            <div className="flex justify-start max-sm:justify-between items-center gap-5 mt-5">
+            <div className="flex justify-start max-sm:justify-center items-center gap-5 mt-5">
               <Link
                 className="animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
                 href={"#"}>
@@ -162,10 +162,10 @@ export default function Home() {
           <li>Turkish</li>
         </ul>
       </div>
-      {/* Projects */}
+      {/* Portfolio */}
       <div className="flex flex-col gap-5">
         <h3 className="text-3xl">
-          Projects<span className="text-red-500">*</span>
+          Portfolio<span className="text-red-500">*</span>
         </h3>
         <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-3">
           {projects.slice(0, 2).map((project) => (
