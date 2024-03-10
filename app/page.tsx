@@ -59,7 +59,7 @@ export default function Home() {
                 towards flexibility, clarity and collaboration.
               </p>
             </div>
-            <div className="flex justify-start items-center gap-5 mt-5">
+            <div className="flex justify-start max-sm:justify-between items-center gap-5 mt-5">
               <Link
                 className="animate-pulse hover:bg-gray-500/50 hover:scale-110 transition-transform  border p-4"
                 href={"#"}>
