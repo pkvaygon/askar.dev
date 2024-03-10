@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
       onClick={handleButtonClick}
       isIconOnly
       radius="full"
-      variant="light">
+      variant="flat">
       {theme === "light" ? (
         <MoonIcon
           className="text-default-500"

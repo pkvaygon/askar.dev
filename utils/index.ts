@@ -1,5 +1,3 @@
-export const itcbootcampLink =
-  "https://www.google.com/search?q=itcbootcamp&sca_esv=4c908fbc6c8bfb37&sxsrf=ACQVn0-FvwutiodPPnQhezy3-qXOPAHyBA%3A1709948067966&ei=o7zrZaDBOuSIptQPt4SgwA8&oq=ITC&gs_lp=Egxnd3Mtd2l6LXNlcnAiA0lUQyoCCAAyChAjGIAEGIoFGCcyChAAGIAEGIoFGEMyChAAGIAEGIoFGEMyEBAAGIAEGIoFGEMYsQMYgwEyFhAuGIAEGIoFGEMYsQMYgwEYxwEY0QMyCBAAGIAEGLEDMggQABiABBixAzIIEAAYgAQYsQMyCBAAGIAEGLEDMggQABiABBixA0iAFlC4CFjbDnACeAGQAQCYAW6gAaACqgEDMS4yuAEDyAEA-AEBmAIFoAK8AqgCE8ICChAAGEcY1gQYsAPCAg0QABiABBiKBRhDGLADwgIZEC4YgAQYigUYQxjHARjRAxjIAxiwA9gBAcICGxAuGIAEGIoFGEMYxwEY0QMYyAMYsAMYCtgBAcICBxAjGOoCGCfCAhMQABiABBiKBRhDGOoCGLQC2AECwgIcEC4YgAQYigUYQxjHARjRAxjIAxjqAhi0AtgBAcICDhAAGIAEGIoFGLEDGIMBwgILEAAYgAQYsQMYgwHCAgUQABiABMICCxAuGIAEGLEDGIMBwgIOEC4YgwEYsQMYgAQYigXCAhEQLhiABBixAxiDARjHARjRA8ICDRAAGIAEGIoFGEMYsQPCAhMQLhiABBiKBRhDGLEDGIMBGNQCmAMIiAYBkAYTugYGCAEQARgIugYGCAIQARgBkgcDMy4yoAf_HQ&sclient=gws-wiz-serp";
 export const navLinks = [
   { id: 0, label: "Home", href: "/" },
   { id: 1, label: "Projects", href: "#" },
@@ -80,4 +78,29 @@ export const stacks = [
     label: "Figma",
     image: figma,
   },
+];
+
+export const frontendSkills = [
+  "React & NextJs",
+  "TypeScript",
+  "Styled-components",
+  "State-management",
+  "TailwindCSS",
+  "RESTful API",
+];
+export const backendSkills = [
+  "REST APIs",
+  "MongoDB",
+  "Prisma",
+  "HTTP endpoints",
+  "NodeJs",
+  "Cloudflare",
+];
+export const otherSkills = [
+  "Git & GitHub",
+  "Webpack",
+  "Unreal Engine 5",
+  "CMS",
+  "CRM",
+  "SSR,SSG,CSR,ISR,SPA",
 ];

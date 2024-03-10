@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "@tomtom-international/web-sdk-maps";
+@import url('https://fonts.cdnfonts.com/css/ylee-polymnia-framed');
 .container {
   width: 90%;
   margin: 0 auto;

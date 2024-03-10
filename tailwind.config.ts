@@ -10,6 +10,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        polymnia: ["ylee Polymnia Framed", "sans-serif"],
+      },
       keyframes: {
         "scrolling-banner": {
           from: { transform: "translateX(0)" },
