@@ -1,7 +1,7 @@
 import Image from "next/image";
 import avatar from "@/public/avatar2.png";
 import Link from "next/link";
-import ScrollingBanner from "@/components/ScrollingBanner";
+// import ScrollingBanner from "@/components/ScrollingBanner";
 import { Montserrat } from "next/font/google";
 import {
   backendSkills,
@@ -13,13 +13,17 @@ import {
 import { AnchorIcon } from "@/icons";
 import { onContactMeFormSubmit } from "@/lib/actions";
 import { cookies } from "next/headers";
-import contactme from '@/public/creationofadam.png'
+import contactme from "@/public/creationofadam.png";
+import dynamic from "next/dynamic";
+import Loading from "@/components/Loading";
 const montserrat = Montserrat({
   weight: "500",
   style: ["normal"],
   subsets: ["latin"],
 });
-
+const ScrollingBanner = dynamic(() => import("@/components/ScrollingBanner"), {
+  loading: () => <Loading/>,
+});
 export default function Home() {
   const cookieStore = cookies();
   const sent = cookieStore.get("sent");
@@ -264,8 +268,10 @@ export default function Home() {
         DownLoad CV <AnchorIcon />
       </Link>
       {/* contact form */}
-      <div id="contactme" className="scroll-mt-[100px] max-sm:w-full flex max-sm:flex-col gap-4 w-full p-4 bg-slate-500/10 dark:bg-gray-500/10">
-        <div  className=" max-sm:w-full w-1/2">
+      <div
+        id="contactme"
+        className="scroll-mt-[100px] max-sm:w-full flex max-sm:flex-col gap-4 w-full p-4 bg-slate-500/10 dark:bg-gray-500/10">
+        <div className=" max-sm:w-full w-1/2">
           <h3 className="text-2xl">Contact me</h3>
           {sent ? (
             <div className="w-full h-[400px] flex justify-center items-center">
@@ -313,7 +319,12 @@ export default function Home() {
           )}
         </div>
         <div className=" max-sm:w-full w-1/2 h-[400px] relative">
-          <Image className="object-contain" fill src={contactme} alt="contact me"/>
+          <Image
+            className="object-contain"
+            fill
+            src={contactme}
+            alt="contact me"
+          />
         </div>
       </div>
     </section>

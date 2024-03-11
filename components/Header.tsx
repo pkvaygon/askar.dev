@@ -12,13 +12,15 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
-  Button,
 } from "@nextui-org/react";
 import { LogoIcon } from "@/icons";
-import { ThemeSwitcher } from "./ThemeSwitcher";
 import { navLinks } from "@/utils";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Loading from "./Loading";
+const ThemeSwitcher = dynamic(() => import('./ThemeSwitcher').then(mod => mod.ThemeSwitcher), { ssr: false, loading: ()=> <Loading/> })
+ 
 export default function Header(props: NavbarProps) {
   const pathname = usePathname();
   return (
