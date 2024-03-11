@@ -264,8 +264,8 @@ export default function Home() {
         DownLoad CV <AnchorIcon />
       </Link>
       {/* contact form */}
-      <div className=" max-sm:w-full flex max-sm:flex-col gap-4 w-full p-4 bg-slate-500/10 dark:bg-gray-500/10">
-        <div className=" max-sm:w-full w-1/2">
+      <div id="contactme" className="scroll-mt-[100px] max-sm:w-full flex max-sm:flex-col gap-4 w-full p-4 bg-slate-500/10 dark:bg-gray-500/10">
+        <div  className=" max-sm:w-full w-1/2">
           <h3 className="text-2xl">Contact me</h3>
           {sent ? (
             <div className="w-full h-[400px] flex justify-center items-center">

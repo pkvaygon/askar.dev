@@ -60,11 +60,6 @@ export default function Header(props: NavbarProps) {
           </NavbarItem>
         ))}
 
-        <NavbarItem className="ml-2 max-sm:hidden">
-          <Button radius="full" variant="flat">
-            Login
-          </Button>
-        </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <ThemeSwitcher />
         </NavbarItem>
