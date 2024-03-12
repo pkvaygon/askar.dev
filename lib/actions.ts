@@ -1,4 +1,3 @@
-import emailjs from "@emailjs/browser";
 import { cookies } from "next/headers";
 export async function onContactMeFormSubmit(formData: FormData) {
   "use server";
@@ -9,21 +8,25 @@ export async function onContactMeFormSubmit(formData: FormData) {
   const oneMinute = 60 * 1000;
   const expirationDate = new Date(Date.now() + oneMinute);
 
-  cookies().set("sent", "true", { expires: expirationDate });
-  return true;
-  //   try {
-  //     emailjs.send(
-  //       "service_vlv7rbg",
-  //       "template_pwrah8n",
-  //       {
-  //         from_name,
-  //         email,
-  //         phone,
-  //         message,
-  //       },
-  //       { publicKey: "W5rWt7iwNDJkbh3OM" }
-  //     );
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
+  const requestOptions = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ from_name, email, phone, message }),
+  };
+
+  try {
+    const response = await fetch(
+      "http://localhost:3000/api/send",
+      requestOptions
+    );
+    if (!response.ok) {
+      throw new Error("Ошибка при выполнении запроса");
+    }
+    cookies().set("sent", "true", { expires: expirationDate });
+    return response.json();
+  } catch (error) {
+    console.error("Произошла ошибка:", error);
+  }
 }
